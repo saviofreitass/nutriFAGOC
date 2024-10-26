@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    name: task_manager
+    url: jdbc:postgresql://localhost:5432/informacoes_nutricionais
+    username: postgres
+    password: 566031
+    driver-class-name: org.postgresql.Driver
