@@ -1,0 +1,14 @@
+.headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+   margin-bottom: 10px;
+    background-color: #1DBF3B;
+}
+
+header h1 {
+    font-family: 'Handlee', sans-serif;
+    color: white;
+    align-items: center;
+}
