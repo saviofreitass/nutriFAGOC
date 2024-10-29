@@ -23,25 +23,27 @@ function App() {
       setFoods(data)
     })
     .catch((err) => console.log(err))
-  }, [])
+  }, [termoBusca])
 
   const alimentoFiltro = foods.filter(food =>
-    food.name.toLowerCase().includes(termoBusca.toLowerCase())
+    food.descricaoalimento.toLowerCase().includes(termoBusca.toLowerCase())
   );
 
   return (
     <div className={styles.App}>
       <Header/>
       <div className={styles.main}>
-        <InputBusca onSearch={setTermoBusca}/>
+        <InputBusca onSearch={setTermoBusca} handleClick={alimentoFiltro}/>
         {foods.length > 0 && alimentoFiltro.map(food=> (
         <FoodContainer 
-          name={food.name} 
-          calorias={food.nutrients.calories} 
-          proteinas={food.nutrients.protein} 
-          carboidratos={food.nutrients.carbohydrate} 
-          gorduras={food.nutrients.fat} 
-          categoria={food.category}/>))}
+          name={food.descricaoalimento} 
+          calorias={parseFloat(food.energiakcal).toFixed(2)} 
+          proteinas={parseFloat(food.proteina).toFixed(2)} 
+          carboidratos={parseFloat(food.carboidrato).toFixed(2)} 
+          gorduras={parseFloat(food.lipideos).toFixed(2)} 
+          categoria={food.categoria}
+          key={food.id}
+          />))}
       </div>
     </div>
   );

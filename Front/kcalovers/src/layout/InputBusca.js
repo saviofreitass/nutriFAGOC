@@ -1,6 +1,6 @@
 import styles from "./InputBusca.module.css"
 
-function InputBusca({onSearch}){
+function InputBusca({onSearch, handleClick}){
     const handleInputChange = (e) => {
         onSearch(e.target.value);
       };  
@@ -8,7 +8,7 @@ function InputBusca({onSearch}){
     return(
         <div className={styles.procurar}>
             <input onChange={handleInputChange}/>
-            <button>Buscar</button>
+            <button onClick={handleClick}>Buscar</button>
         </div>
     )
 }
