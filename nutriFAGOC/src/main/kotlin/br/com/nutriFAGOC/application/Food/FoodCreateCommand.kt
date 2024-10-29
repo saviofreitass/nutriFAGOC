@@ -6,7 +6,7 @@ import java.util.*
 
 @Serializable
 data class FoodCreateCommand(
-    val id: UUID,
+
     val categoria: String,
     val numeroalimento: String,
     val descricaoalimento: String,
@@ -29,7 +29,7 @@ data class FoodCreateCommand(
 
 @Serializable
 data class FoodUpdateCommand(
-    val id: UUID,
+    val id: UUID?,
     val categoria: String,
     val numeroalimento: String,
     val descricaoalimento: String,
@@ -52,7 +52,7 @@ data class FoodUpdateCommand(
 
 //metodo de extensão
 fun FoodCreateCommand.toFood() = Food(
-    id = id,
+
     categoria = categoria,
     numeroalimento = numeroalimento,
     descricaoalimento = descricaoalimento,

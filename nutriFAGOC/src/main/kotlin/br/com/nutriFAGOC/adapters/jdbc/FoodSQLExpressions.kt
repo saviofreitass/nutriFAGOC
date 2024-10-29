@@ -124,4 +124,10 @@ object FoodSQLExpressions {
         FROM alimentos
         WHERE id = :id
     """.trimIndent()
+
+    fun sqlSelectByName() = """
+        SELECT *
+        FROM alimentos
+        WHERE descricaoalimento LIKE CONCAR ('%', :descricaoalimento, '%')
+    """.trimIndent()
 }

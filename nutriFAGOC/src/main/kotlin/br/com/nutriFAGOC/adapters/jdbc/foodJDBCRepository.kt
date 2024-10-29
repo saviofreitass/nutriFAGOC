@@ -4,6 +4,7 @@ import br.com.nutriFAGOC.adapters.jdbc.FoodSQLExpressions.sqlDeleteFoodById
 import br.com.nutriFAGOC.adapters.jdbc.FoodSQLExpressions.sqlInsertFood
 import br.com.nutriFAGOC.adapters.jdbc.FoodSQLExpressions.sqlSelectAll
 import br.com.nutriFAGOC.adapters.jdbc.FoodSQLExpressions.sqlSelectById
+import br.com.nutriFAGOC.adapters.jdbc.FoodSQLExpressions.sqlSelectByName
 import br.com.nutriFAGOC.adapters.jdbc.FoodSQLExpressions.sqlUpdateFood
 import br.com.nutriFAGOC.domain.food.Food
 import br.com.nutriFAGOC.domain.food.FoodRepository
@@ -38,11 +39,12 @@ class foodJDBCRepository(
             val params = MapSqlParameterSource("id", foodId)
             db.query(sqlSelectById(), params, rowMapper()).firstOrNull()
         }catch (ex: Exception){
-            LOGGER.error { "Houve um erro ao consultar a tarefa: ${ex.message}" }
+            LOGGER.error { "Houve um erro ao consultar a alimentos: ${ex.message}" }
             throw ex
         }
         return food
     }
+
 
     override fun insert(food: Food): Boolean {
         try {

@@ -17,6 +17,7 @@ class FoodService(
     fun findById(foodId: UUID): Food{
         return foodRepository.findById(foodId) ?: throw AlimentoNaoEncontradaException(foodId)
     }
+
     fun insert(food: FoodCreateCommand): Food{
         val foodDomain = food.toFood()
         foodRepository.insert(food = foodDomain)
