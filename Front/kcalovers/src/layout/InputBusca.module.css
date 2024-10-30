@@ -1,4 +1,52 @@
-.procurar {
+
+
+.procurar{
+    width: 88.5vw;
+    height: 50vh;
+    background-image: url("../imgs/Background.png");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.procurar h1{
+    margin: 5px;
+}
+
+.procurar p{
+    font-size: 17px;
+}
+
+.procurar input {
+    width: 40%;
+    height: 20px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 12px;
+    border: 2px solid;
+    background: none;
+}
+
+.procurar input:focus{
+    background: #ffffff;
+}
+
+.procurar button {
+    background-color: #1DBF3B;
+    color: #ffffff;
+    width: 110px;
+    height: 48px;
+    font-size: 25px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+/*.procurar {
     width: 100%;
     height: 100px;
     display: flex;
@@ -6,26 +54,11 @@
     flex-direction: row;
 }
 
-.procurar button {
-    background-color: #1DBF3B;
-    color: #ffffff;
-    width: 150px;
-    height: 54px;
-    font-size: 30px;
-    border: none;
-    margin-left: 10px;
-}
 
 .procurar button:active {
     background-color: #1b832e;
 }
 
-.procurar input {
-    width: 50%;
-    height: 30px;
-    font-size: 30px;
-    padding: 10px;
-}
 
 @media (max-width: 768px) {
     .procurar input {
@@ -37,4 +70,4 @@
         width: 120px;
         font-size: 20px;
     }
-}
+}*/
