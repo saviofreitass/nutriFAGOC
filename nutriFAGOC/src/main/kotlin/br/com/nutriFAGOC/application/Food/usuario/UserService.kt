@@ -1,7 +1,7 @@
 package br.com.nutriFAGOC.application.Food.usuario
 
 
-import br.com.nutriFAGOC.application.Food.exception.UsuarioNaoEncontradaException
+import br.com.nutriFAGOC.application.Food.usuario.exception.UsuarioNaoEncontradaException
 import br.com.nutriFAGOC.domain.food.Foods.usuario.User
 import br.com.nutriFAGOC.domain.food.Foods.usuario.UserRepository
 import org.springframework.stereotype.Service
@@ -18,6 +18,11 @@ class UserService(
     fun findById(userId: UUID): User {
         return userRepository.findById(userId) ?: throw UsuarioNaoEncontradaException(userId)
     }
+
+    fun findByEmail(email: String): User? {
+        return userRepository.findByEmail(email)
+    }
+
 
     fun insert(user: UserCreateCommand): User {
         val userDomain = user.toUser()

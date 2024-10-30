@@ -1,4 +1,4 @@
-package br.com.nutriFAGOC.application.Food.exception
+package br.com.nutriFAGOC.application.Food.food.exception
 
 import java.util.*
 

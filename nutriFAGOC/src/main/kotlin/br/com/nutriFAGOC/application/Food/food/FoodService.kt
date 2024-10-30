@@ -1,6 +1,6 @@
 package br.com.nutriFAGOC.application.Food.food
 
-import br.com.nutriFAGOC.application.Food.exception.AlimentoNaoEncontradaException
+import br.com.nutriFAGOC.application.Food.food.exception.AlimentoNaoEncontradaException
 import br.com.nutriFAGOC.domain.food.Foods.food.Food
 import br.com.nutriFAGOC.domain.food.Foods.food.FoodRepository
 import org.springframework.stereotype.Service

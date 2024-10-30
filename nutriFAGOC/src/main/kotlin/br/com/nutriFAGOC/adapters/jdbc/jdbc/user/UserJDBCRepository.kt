@@ -45,6 +45,18 @@ class UserJDBCRepository(
         return user
     }
 
+    override fun findByEmail(email: String): User? {
+
+        val user = try {
+            val params = MapSqlParameterSource("email", email)
+            db.query(sqlSelectById(), params, rowMapper()).firstOrNull()
+        }catch (ex: Exception){
+            LOGGER.error { "Houve um erro ao consultar o usuario: ${ex.message}" }
+            throw ex
+        }
+        return user
+    }
+
 
     override fun insert(user: User): Boolean {
         try {
