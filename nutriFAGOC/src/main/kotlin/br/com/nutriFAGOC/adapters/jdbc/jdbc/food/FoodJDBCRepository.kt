@@ -89,6 +89,7 @@ class foodJDBCRepository(
             descricaoalimento = rs.getString("descricaoalimento"),
             carboidrato = rs.getString("carboidrato"),
             energiakcal = rs.getString("energiakcal"),
+            energiakj = rs.getString("energiakj"),
             proteina = rs.getString("proteina"),
             lipideos = rs.getString("lipideos"),
             colesterol = rs.getString("colesterol"),
@@ -113,6 +114,7 @@ class foodJDBCRepository(
         params.addValue("descricaoalimento", food.descricaoalimento)
         params.addValue("carboidrato", food.carboidrato)
         params.addValue("energiakcal", food.energiakcal)
+        params.addValue("energiakj", food.energiakj)
         params.addValue("proteina", food.proteina)
         params.addValue("lipideos", food.lipideos)
         params.addValue("colesterol", food.colesterol)

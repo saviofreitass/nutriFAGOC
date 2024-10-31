@@ -9,6 +9,7 @@ class Food (
     val descricaoalimento: String,
     val carboidrato: String,
     val energiakcal: String,
+    val energiakj: String,
     val proteina: String,
     val lipideos: String,
     val colesterol: String,
