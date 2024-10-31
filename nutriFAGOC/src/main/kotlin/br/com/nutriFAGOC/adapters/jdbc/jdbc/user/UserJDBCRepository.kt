@@ -1,9 +1,11 @@
 package br.com.nutriFAGOC.adapters.jdbc.jdbc.user
 
 
+import br.com.nutriFAGOC.adapters.jdbc.ecrypt.PasswordBcryptEncoder
 import br.com.nutriFAGOC.adapters.jdbc.jdbc.user.UserSQLExpressions.sqlDeleteUserById
 import br.com.nutriFAGOC.adapters.jdbc.jdbc.user.UserSQLExpressions.sqlInsertUser
 import br.com.nutriFAGOC.adapters.jdbc.jdbc.user.UserSQLExpressions.sqlSelectAll
+import br.com.nutriFAGOC.adapters.jdbc.jdbc.user.UserSQLExpressions.sqlSelectByEmail
 import br.com.nutriFAGOC.adapters.jdbc.jdbc.user.UserSQLExpressions.sqlSelectById
 import br.com.nutriFAGOC.adapters.jdbc.jdbc.user.UserSQLExpressions.sqlUpdateUser
 import br.com.nutriFAGOC.domain.food.Foods.usuario.User
@@ -17,6 +19,7 @@ import java.util.*
 
 @Repository
 class UserJDBCRepository(
+    private val passwordBcryptEncoder: PasswordBcryptEncoder,
     private val db: NamedParameterJdbcOperations
 ) : UserRepository {
     private companion object{
@@ -30,6 +33,7 @@ class UserJDBCRepository(
             LOGGER.error { "Houve um erro ao consultar os usuarios: ${ex.message}" }
             throw ex
         }
+        user.forEach { it.senha = "" }
         return user
     }
 
@@ -42,6 +46,7 @@ class UserJDBCRepository(
             LOGGER.error { "Houve um erro ao consultar o usuario: ${ex.message}" }
             throw ex
         }
+        user?.senha = ""
         return user
     }
 
@@ -49,7 +54,7 @@ class UserJDBCRepository(
 
         val user = try {
             val params = MapSqlParameterSource("email", email)
-            db.query(sqlSelectById(), params, rowMapper()).firstOrNull()
+            db.query(sqlSelectByEmail(), params, rowMapper()).firstOrNull()
         }catch (ex: Exception){
             LOGGER.error { "Houve um erro ao consultar o usuario: ${ex.message}" }
             throw ex
@@ -108,7 +113,8 @@ class UserJDBCRepository(
         params.addValue("id", user.id)
         params.addValue("nome", user.nome)
         params.addValue("email", user.email)
-        params.addValue("senha", user.senha)
+        val senhaHasheada = passwordBcryptEncoder.encode(user.senha)
+        params.addValue("senha", senhaHasheada)
 
         return params
     }

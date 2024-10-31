@@ -7,5 +7,5 @@ class User (
     val id: UUID = UUID.randomUUID(),
     val nome: String,
     val email: String,
-    val senha: String
+    var senha: String
 )
