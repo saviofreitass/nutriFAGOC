@@ -31,18 +31,24 @@ function ListFood(){
     return(
         <div className={styles.container}>
             <InputBusca onSearch={setTermoBusca}/>
-            {foods.length > 0 && alimentoFiltro.map(food=> (
-            <FoodContainer 
-            name={food.descricaoalimento} 
-            calorias={parseFloat(food.energiakcal).toFixed(2)}
-            proteinas={parseFloat(food.proteina).toFixed(2)} 
-            carboidratos={parseFloat(food.carboidrato).toFixed(2)} 
-            gorduras={parseFloat(food.lipideos).toFixed(2)} 
-            categoria={food.categoria}
-            key={food.id}
-            />))}
+            <div className={styles.list}>
+              {foods.length > 0 && alimentoFiltro.map(food=> (
+              <FoodContainer 
+              name={food.descricaoalimento} 
+              energia={parseFloat(food.energiakj).toFixed(2)}
+              calorias={parseFloat(food.energiakcal).toFixed(2)}
+              proteinas={parseFloat(food.proteina).toFixed(2)} 
+              carboidratos={parseFloat(food.carboidrato).toFixed(2)} 
+              gorduras={parseFloat(food.lipideos).toFixed(2)} 
+              colesterol={parseFloat(food.colesterol).toFixed(2)}
+              fibras={parseFloat(food.fibraalimentar).toFixed(2)}
+              sodio={parseFloat(food.sodio).toFixed(2)}
+              potassio={parseFloat(food.potassio).toFixed(2)}
+              key={food.id}
+              />))}
+            </div>
         </div>
-    )
+    ) 
 }
 
 export default ListFood
