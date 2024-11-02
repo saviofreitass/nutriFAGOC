@@ -6,8 +6,8 @@
 body{
     width: 100vw;
     height: 100vh;
-
 }
+
 header{
     display: flex;
     align-items: center;
@@ -15,19 +15,26 @@ header{
     height: 90px;
     background-color:#1DBF3B;
 }
+
 header h1{
     font-family: 'Handlee',sans-serif;
     color: white;
     align-items: center;
 }
+
 .container{
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url("../imgs/BackgroundCadastro");
+    background-size: cover; 
+    background-position:center; 
+    background-repeat: no-repeat; 
 
 }
+
 .login{
     font-family: 'Inria Serif',sans-serif;
     display: flex;
@@ -39,17 +46,20 @@ header h1{
     height: 360px;
     background-color: #ffffff;
 }
+
 .login p {
     font-size: 32px;
     color: #1DBF3B;
     margin: 20px
 }
+
 .inputs{
     display: flex;
     flex-direction: column;
     font-size: 20px;
     width: 90%;
 }
+
 .inputs input{
     margin-bottom:10px;
     width: 98%;
@@ -60,6 +70,7 @@ header h1{
     padding-left:10px;
     border-radius: 12px;
 }
+
 .login button{
     background-color: #1DBF3B;
     color: #ffffff;
@@ -70,13 +81,16 @@ header h1{
     margin:15px;
     border-radius: 12px;
 }
+
 .login button:active{
     background-color: #188d2d;
 }
+
 a{
     text-decoration: none;
     color: #000000;
 }
+
 .cadastro{
     font-family: 'Inria Serif',sans-serif;
     display: flex;
@@ -88,10 +102,12 @@ a{
     height: 360px;
     background-color: #1DBF3B;
 }
+
 .cadastro p{
     margin:30px;
     color: #ffffff
 }
+
 .cadastro button{
     background-color: #ffffff;
     color: #1DBF3B;
@@ -102,9 +118,11 @@ a{
     margin:15px;
     border-radius: 12px;
 }
+
 .cadastro button:active{
     background-color: #e9e9e9;
 }
+
 footer{
     height: 90px;
     background-color:#1DBF3B;

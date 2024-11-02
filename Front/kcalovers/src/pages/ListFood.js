@@ -4,6 +4,7 @@ import styles from "./ListFood.module.css"
 
 import InputBusca from "../layout/InputBusca";
 import FoodContainer from "../layout/FoodContainer";
+import Header from '../layout/Header';
 
 function ListFood(){
 
@@ -30,6 +31,7 @@ function ListFood(){
 
     return(
         <div className={styles.container}>
+                  <Header/>
             <InputBusca onSearch={setTermoBusca}/>
             <div className={styles.list}>
               {foods.length > 0 && alimentoFiltro.map(food=> (
