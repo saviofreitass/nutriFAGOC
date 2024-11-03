@@ -73,7 +73,7 @@ function Cadastro(){
                         <label htmlFor="confSenha">Confirme sua senha:</label>
                         <input type="password" name="confSenha" id="confSenha" onChange={(e)=>{setConfSenha(e.target.value)}}/>
                     </section>
-                    <p>{alerta}</p>
+                    <p className={styles.alert}>{alerta}</p>
                     <button onClick={cadastrar}>Cadastrar</button>
                 </form>
             </div>

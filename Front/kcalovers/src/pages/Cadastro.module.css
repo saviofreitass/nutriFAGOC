@@ -46,6 +46,11 @@ section input{
     border-radius: 12px;
 }
 
+.alert{
+    font-size: 16px;
+    color: red;
+}
+
 button{
     background-color: #fff ;
     color: #1DBF3B;

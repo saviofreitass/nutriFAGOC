@@ -47,7 +47,8 @@ header h1{
     background-color: #ffffff;
 }
 
-.login p {
+
+.title {
     font-size: 32px;
     color: #1DBF3B;
     margin: 20px
@@ -69,6 +70,11 @@ header h1{
     border:none;
     padding-left:10px;
     border-radius: 12px;
+}
+
+.alert{
+    color: red;
+    font-size: 16px;
 }
 
 .login button{
